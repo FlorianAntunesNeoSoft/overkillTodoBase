@@ -1,0 +1,15 @@
+mat-form-field{
+  display: block;
+}
+
+// overrides.scss or styles.scss
+// This fixes https://github.com//issues/4609
+.fixActionRow {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex-grow: 1;
+}

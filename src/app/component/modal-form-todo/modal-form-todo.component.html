@@ -1,0 +1,38 @@
+<div class="fixActionRow">
+  <h2 mat-dialog-title>Add todo</h2>
+
+  <div mat-dialog-content class="contenu" [formGroup]="form">
+    <!-- TITLE  -->
+    <div class="content-title">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput id="title" required />
+        <mat-error *ngIf="form.get('title')?.errors?.required">
+          Title is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- DESCRIBE  -->
+    <div class="content-discribe">
+      <mat-form-field appearance="outline">
+        <mat-label>Describe</mat-label>
+        <textarea  rows="10" formControlName="describe" matInput id="describe"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+    <div class="spacer"></div>
+
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button
+        mat-button
+        [mat-dialog-close]="addTodo()"
+        [disabled]="!this.form.valid"
+        cdkFocusInitial
+      >
+        Add
+      </button>
+    </mat-dialog-actions>
+
+</div>

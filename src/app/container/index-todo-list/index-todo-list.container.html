@@ -1,0 +1,5 @@
+<app-todo-list
+  [todos] = "todos$ | async"
+  (updatedTodo) = "updatedTodo($event)"
+  (openAddTodoModal)= "openAddModal()"
+></app-todo-list>

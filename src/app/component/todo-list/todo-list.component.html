@@ -1,0 +1,23 @@
+<div id="container">
+  <mat-card>
+    <mat-card-title>Todos</mat-card-title>
+
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let todo of todos">
+          <h4 matLine>
+            <mat-checkbox (change)="changeStatutTodo(todo)"
+              [checked]="todo.isClosed"
+            ></mat-checkbox>
+            <span [ngClass]="todo.isClosed ? 'crossed-out-text' : 'not-cross-out-text'" [routerLink]="['/todo/', todo.id]"> {{ todo.title }}</span>
+          </h4>
+        </mat-list-item>
+      </mat-list>
+      <div class="add-todo-button">
+        <button mat-mini-fab color="accent" (click)="openAddModal()">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
